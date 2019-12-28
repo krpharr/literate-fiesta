@@ -1,10 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>TITLE</title>
-  </head>
-  <body>
 
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <main>
+
+        <div class="row" style="display:flex; justify-content: center;">
+            <form class="col s2" style="margin: 32px auto 0; padding: 16px; border: 1px lightgrey solid;">
+                <div class="row">
+                    <div class="input-field col 12">
+                        <input placeholder="185.00" id="input-weight-ID" type="text">
+                        <label for="input-weight-ID">Enter Weight</label>
+                    </div>
+                    <div class="col 12">
+                        <button class="btn" id="btn-weight-ID">Enter</button>
+                    </div>
+                </div>
+            </form>
+
+            <form class="col s4" style="margin: 32px auto 0; padding: 16px; border: 1px lightgrey solid;">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input value="1" id="input-num-food-ID" type="text">
+                        <label for="input-num-food-ID">Quantity</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input value="medium" id="input-size-ID" type="text">
+                        <label for="input-size-ID">size</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="input-food-ID" type="text">
+                        <label for="input-food-ID">Food Item</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="input-AND-ID" type="text">
+                        <label for="input-food-ID">AND</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn" id="btn-food-ID">Enter</button>
+                </div>
+            </form>
+
+        </div>
+
+
+
+
+
+    </main>
+
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="assets/js/moment.js"></script>
+    <script>
+        moment().format();
+    </script>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
 </html>

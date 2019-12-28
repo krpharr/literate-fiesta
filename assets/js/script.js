@@ -30,16 +30,61 @@ $("#btn-food-ID").on("click", function(event) {
 
 
     if (f === "") return;
+    let fa = f;
+    if (a !== "") fa += " AND " + a;
 
-    if (a !== "") f += " AND " + a;
-
-    let query = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&nutrition-type=logging&ingr=${n}%20${s}%20${f}`;
+    let query = `https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&nutrition-type=logging&ingr=${n}%20${s}%20${fa}`;
 
     $.ajax({
         url: query,
-        method: "GET"
+        method: "GET",
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            alert("some error");
+        }
 
     }).then(function(response) {
         console.log(response);
+        if (response.calories === 0 && response.totalWeight === 0) {
+            // alert("check your entries");
+            return;
+        }
+
+        let foodTodayCard = $("<div class='food-today-item-card'>")
+        let controlRow = $("<div class='row' style='margin:0;'>");
+        let closeCol = $("<div class='col 12 food-today-close'>").html("<i class='material-icons'>close</i>");
+        controlRow.append(closeCol);
+        foodTodayCard.append(controlRow);
+
+        let foodEntry = $("<div>").addClass("food-today-item");
+        let str = `${n} ${s} ${f}`;
+        if (a !== "") str += ` & ${a}`;
+        // foodEntry.append(controlRow);
+        let row = $("<div class='row'>");
+        let meal = $("<span class='col 1'>").text(str);
+        let cal = $("<span  class='col 3 calories'>").text(response.calories);
+        row.append(meal, cal);
+        foodEntry.append(row);
+        foodTodayCard.append(foodEntry);
+        $("#food-today-ID").append(foodTodayCard);
+
+        updateFoodTodayContainer();
+
+        $(".food-today-close").on("click", function() {
+            console.log(this);
+            // console.log($(this).parent()[0].remove());
+            let p = $(this).parent().parent()[0];
+            p.remove();
+
+        });
+
+
     });
 });
+
+
+
+function updateFoodTodayContainer() {
+    let calories = 0;
+    let cArray = $("#food-today-ID").children();
+    console.log(cArray);
+}

@@ -10,18 +10,38 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 
-    <title>Document</title>
+    <title>Daily Tracker</title>
 </head>
 
 <body>
 
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="weight-log.html">Weight Log</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">Javascript</a></li>
+                <li><a href="mobile.html">Mobile</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="weight-log.html">Weight Log</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+    </ul>
 
     <main>
 
-        <div class="row" style="display:flex; justify-content: center;">
-            <form class="col s2" style="margin: 32px auto 0; padding: 16px; border: 1px lightgrey solid;">
+        <div class="row" id="daily-input-container">
+            <form class="col s12 m6" style="margin: 32px auto 0; padding: 16px; border: 1px lightgrey solid;">
                 <div class="row">
                     <div class="input-field col 12">
                         <input placeholder="185.00" id="input-weight-ID" type="text">
@@ -33,16 +53,16 @@
                 </div>
             </form>
 
-            <form class="col s4" style="margin: 32px auto 0; padding: 16px; border: 1px lightgrey solid;">
+            <form class="col s12 m6" style="margin: 32px auto 0; padding: 16px; border: 1px lightgrey solid;">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input value="1" id="input-num-food-ID" type="text">
+                        <input placeholder="1" id="input-num-food-ID" type="text">
                         <label for="input-num-food-ID">Quantity</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input value="medium" id="input-size-ID" type="text">
+                        <input placeholder="medium" id="input-size-ID" type="text">
                         <label for="input-size-ID">size</label>
                     </div>
                 </div>
@@ -84,7 +104,6 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <script src="assets/js/moment.js"></script>
     <script>
@@ -92,6 +111,11 @@
     </script>
 
     <script src="assets/js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+        });
+    </script>
 
 </body>
 

@@ -41,15 +41,22 @@
     <main>
 
         <div class="row" id="daily-input-container">
-            <form class="col s12 m6" style="margin: 32px auto 0; padding: 16px; border: 1px lightgrey solid;">
+            <form id="weight-form-ID" class="col s12 m6" style="margin: 32px auto 0; padding: 16px; border: 1px lightgrey solid;">
                 <div class="row">
                     <div class="input-field col 12">
-                        <input placeholder="185.00" id="input-weight-ID" type="text">
+                        <input id="input-weight-ID" type="text">
                         <label for="input-weight-ID">Enter Weight</label>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="cb-dressed-ID" />
+                                <span>Dressed</span>
+                            </label>
+                        </div>
+                        <div class="col 12">
+                            <button class="btn" id="btn-weight-ID">Enter</button>
+                        </div>
                     </div>
-                    <div class="col 12">
-                        <button class="btn" id="btn-weight-ID">Enter</button>
-                    </div>
+
                 </div>
             </form>
 

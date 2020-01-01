@@ -3,22 +3,28 @@ const APP_KEY = "0bd3fa37851816752a8884d6a237c9fe";
 
 $("#btn-weight-ID").on("click", function(event) {
     event.preventDefault();
-    console.log(event.target);
-    console.log($("#input-weight-ID").val());
+    // console.log(event.target);
+    // console.log($("#input-weight-ID").val());
+    // console.log($("#cb-dressed-ID"));
+    // console.log($("#cb-dressed-ID").val());
+    // console.log($("#cb-dressed-ID")[0].checked);
 
     let w = $("#input-weight-ID").val();
-    let d = moment();
+    let dressed = $("#cb-dressed-ID")[0].checked;
+    let date = moment();
 
     let dataObj = {
         type: "weight",
         weight: w,
-        timestamp: d.format()
+        dressed: dressed,
+        timestamp: date.format()
     }
 
     let lf = JSON.parse(localStorage.getItem("lf-weight"));
     if (lf === null) lf = [];
     lf.push(dataObj);
     localStorage.setItem("lf-weight", JSON.stringify(lf));
+    $("#weight-form-ID")[0].reset();
 });
 
 $("#btn-food-ID").on("click", function(event) {

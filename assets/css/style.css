@@ -34,7 +34,7 @@
     /* Styles */
     #daily-input-container {
         display: block;
-        /* justify-content: center; */
+        justify-content: center;
     }
 }
 
@@ -50,6 +50,10 @@
 
 @media only screen and (max-width: 320px) {
     /* Styles */
+    #daily-input-container {
+        display: block;
+        justify-content: center;
+    }
 }
 
 
